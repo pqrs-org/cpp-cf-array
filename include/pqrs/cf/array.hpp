@@ -1,14 +1,15 @@
 #pragma once
 
-// pqrs::cf_array v1.0
+// pqrs::cf::array v1.0
 
 // (C) Copyright Takayama Fumihiko 2018.
 // Distributed under the Boost Software License, Version 1.0.
 // (See http://www.boost.org/LICENSE_1_0.txt)
 
-#include <pqrs/cf_ptr.hpp>
+#include <pqrs/cf/cf_ptr.hpp>
 
 namespace pqrs {
+namespace cf {
 inline cf_ptr<CFArrayRef> make_empty_cf_array(void) {
   cf_ptr<CFArrayRef> result;
 
@@ -43,4 +44,5 @@ inline T get_cf_array_value(CFArrayRef array, CFIndex index) {
   }
   return nullptr;
 }
+} // namespace cf
 } // namespace pqrs
