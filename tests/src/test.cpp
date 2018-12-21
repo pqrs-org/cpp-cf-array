@@ -30,5 +30,8 @@ TEST_CASE("make_cf_mutable_array, get_cf_array_value") {
     auto value2 = pqrs::get_cf_array_value<CFStringRef>(*array, 1);
     REQUIRE(value2);
     REQUIRE(CFEqual(string2, value2));
+
+    auto value3 = pqrs::get_cf_array_value<CFStringRef>(*array, 2);
+    REQUIRE(!value3);
   }
 }
