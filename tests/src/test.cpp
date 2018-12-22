@@ -13,6 +13,7 @@ TEST_CASE("make_cf_mutable_array, get_cf_array_value") {
   {
     auto array = pqrs::cf::make_cf_mutable_array();
     REQUIRE(array);
+    REQUIRE(CFGetRetainCount(*array) == 1);
     REQUIRE(CFArrayGetCount(*array) == 0);
 
     auto string1 = CFSTR("string1");
