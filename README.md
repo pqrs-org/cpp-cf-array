@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pqrs-org/cpp-cf-array.svg?branch=master)](https://travis-ci.org/pqrs-org/cpp-cf-array)
+[![Build Status](https://travis-ci.com/pqrs-org/cpp-cf-array.svg?branch=master)](https://travis-ci.com/pqrs-org/cpp-cf-array)
 [![License](https://img.shields.io/badge/license-Boost%20Software%20License-blue.svg)](https://github.com/pqrs-org/cpp-cf-array/blob/master/LICENSE.md)
 
 # cpp-cf-array
@@ -9,7 +9,7 @@ A utility for `CFArray`.
 
 cpp-cf-array depends the following classes.
 
-- [pqrs::cf::cf_ptr](https://github.com/pqrs-org/cpp-cf-cf_ptr).
+* [pqrs::cf::cf_ptr](https://github.com/pqrs-org/cpp-cf-cf_ptr).
 
 ## Install
 
