@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/pqrs-org/cpp-cf-array.svg?branch=master)](https://travis-ci.com/pqrs-org/cpp-cf-array)
+[![Build Status](https://github.com/pqrs-org/cpp-cf-array/workflows/CI/badge.svg)](https://github.com/pqrs-org/cpp-cf-array/actions)
 [![License](https://img.shields.io/badge/license-Boost%20Software%20License-blue.svg)](https://github.com/pqrs-org/cpp-cf-array/blob/master/LICENSE.md)
 
 # cpp-cf-array
