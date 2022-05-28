@@ -38,4 +38,6 @@ int main(void) {
       expect(!value3);
     }
   };
+
+  return 0;
 }
