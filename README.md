@@ -14,4 +14,4 @@ cpp-cf-array depends the following classes.
 
 ## Install
 
-Copy `include/pqrs` and `vendor/vendor/include` directory into your include directory.
+Copy `include/pqrs` and `vendor/vendor/include` directories into your include directory.
