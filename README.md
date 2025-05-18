@@ -10,7 +10,6 @@ A utility for `CFArray`.
 cpp-cf-array depends the following classes.
 
 - [pqrs::cf::cf_ptr](https://github.com/pqrs-org/cpp-cf-cf_ptr).
-- [pqrs::cf::string](https://github.com/pqrs-org/cpp-cf-string).
 
 ## Install
 
