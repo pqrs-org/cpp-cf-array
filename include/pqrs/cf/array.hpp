@@ -8,41 +8,25 @@
 
 #include <pqrs/cf/cf_ptr.hpp>
 
-namespace pqrs {
-namespace cf {
-inline cf_ptr<CFArrayRef> make_empty_cf_array(void) {
-  cf_ptr<CFArrayRef> result;
-
-  if (auto cf_array = CFArrayCreate(kCFAllocatorDefault,
+namespace pqrs::cf {
+[[nodiscard]] inline cf_ptr<CFArrayRef> make_empty_cf_array() noexcept {
+  return adopt_cf_ptr(CFArrayCreate(kCFAllocatorDefault,
                                     nullptr,
                                     0,
-                                    &kCFTypeArrayCallBacks)) {
-    result = cf_array;
-    CFRelease(cf_array);
-  }
-
-  return result;
+                                    &kCFTypeArrayCallBacks));
 }
 
-inline cf_ptr<CFMutableArrayRef> make_cf_mutable_array(CFIndex capacity = 0) {
-  cf_ptr<CFMutableArrayRef> result;
-
-  if (auto cf_mutable_array = CFArrayCreateMutable(kCFAllocatorDefault,
-                                                   capacity,
-                                                   &kCFTypeArrayCallBacks)) {
-    result = cf_mutable_array;
-    CFRelease(cf_mutable_array);
-  }
-
-  return result;
+[[nodiscard]] inline cf_ptr<CFMutableArrayRef> make_cf_mutable_array(CFIndex capacity = 0) noexcept {
+  return adopt_cf_ptr(CFArrayCreateMutable(kCFAllocatorDefault,
+                                           capacity,
+                                           &kCFTypeArrayCallBacks));
 }
 
 template <typename T>
-inline T get_cf_array_value(CFArrayRef array, CFIndex index) {
-  if (array && index < CFArrayGetCount(array)) {
+[[nodiscard]] inline T get_cf_array_value(CFArrayRef array, CFIndex index) noexcept {
+  if (array && index >= 0 && index < CFArrayGetCount(array)) {
     return static_cast<T>(const_cast<void*>(CFArrayGetValueAtIndex(array, index)));
   }
   return nullptr;
 }
-} // namespace cf
-} // namespace pqrs
+} // namespace pqrs::cf

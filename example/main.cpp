@@ -2,7 +2,7 @@
 #include <pqrs/cf/array.hpp>
 #include <pqrs/cf/string.hpp>
 
-int main(void) {
+int main() {
   if (auto array_ptr = pqrs::cf::make_cf_mutable_array(0)) {
     CFArrayAppendValue(*array_ptr, CFSTR("hello"));
     CFArrayAppendValue(*array_ptr, CFSTR("world"));

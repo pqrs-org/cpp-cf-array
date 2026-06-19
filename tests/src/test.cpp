@@ -1,7 +1,7 @@
 #include <boost/ut.hpp>
 #include <pqrs/cf/array.hpp>
 
-int main(void) {
+int main() {
   using namespace boost::ut;
   using namespace boost::ut::literals;
 
@@ -36,7 +36,15 @@ int main(void) {
 
       auto value3 = pqrs::cf::get_cf_array_value<CFStringRef>(*array, 2);
       expect(!value3);
+
+      auto value4 = pqrs::cf::get_cf_array_value<CFStringRef>(*array, -1);
+      expect(!value4);
     }
+  };
+
+  "get_cf_array_value with null array"_test = [] {
+    auto value = pqrs::cf::get_cf_array_value<CFStringRef>(nullptr, 0);
+    expect(!value);
   };
 
   return 0;
